@@ -1,4 +1,4 @@
-module gitlab.com/edsonmichaque/libpx-provider-dummy
+module gitlab.com/edsonmichaque/libpx-provider-example
 
 go 1.17
 

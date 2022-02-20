@@ -1,4 +1,4 @@
-package dummy
+package example
 
 import (
 	"gitlab.com/edsonmichaque/libpx"
