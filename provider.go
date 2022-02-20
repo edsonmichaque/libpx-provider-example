@@ -45,31 +45,19 @@ func (p Provider) Configure(args ...libpx.ConfigOption) error {
 type Gateway struct{}
 
 func (g Gateway) Authorize(card card.Card, amount libpx.Amount, opts ...libpx.Option) (*libpx.Authorization, error) {
-	options := libpx.Options{}
-
-	for _, opt := range opts {
-		opt(&options)
-	}
+	_ = libpx.NewOptions(opts...)
 
 	return nil, libpx.NotSupportedError{}
 }
 
 func (g Gateway) Capture(auth libpx.Authorization, amount libpx.Amount, opts ...libpx.Option) (*libpx.Capture, error) {
-	options := libpx.Options{}
-
-	for _, opt := range opts {
-		opt(&options)
-	}
+	_ = libpx.NewOptions(opts...)
 
 	return nil, libpx.NotSupportedError{}
 }
 
 func (g Gateway) Purchase(auth libpx.Authorization, amount libpx.Amount, opts ...libpx.Option) (*libpx.Purchase, error) {
-	options := libpx.Options{}
-
-	for _, opt := range opts {
-		opt(&options)
-	}
+	_ = libpx.NewOptions(opts...)
 
 	return nil, libpx.NotSupportedError{}
 }
@@ -83,11 +71,7 @@ func (g Gateway) Void(auth libpx.Authorization) (*libpx.Void, error) {
 }
 
 func (g Gateway) Verify(card card.Card, opts ...libpx.Option) (*libpx.Verification, error) {
-	options := libpx.Options{}
-
-	for _, opt := range opts {
-		opt(&options)
-	}
+	_ = libpx.NewOptions(opts...)
 
 	return nil, libpx.NotSupportedError{}
 }
